@@ -19,9 +19,9 @@ namespace CaliburnMicroApp
         {
             get { return Count < 100; }
         }
-        public void IncrementCount()
+        public void IncrementCount(int delta)
         {
-            Count++;
+            Count += delta;
             NotifyOfPropertyChange(() => CanIncrementCount);
         }
     }
