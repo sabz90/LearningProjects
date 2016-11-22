@@ -14,14 +14,15 @@
         <RepeatButton Name="IncrementCount" Content="Up" Margin="15" VerticalAlignment="Bottom" />
         -->
 
-        <RepeatButton Content="Up" Margin="15" VerticalAlignment="Top">
-            <i:Interaction.Triggers>
-                <i:EventTrigger EventName="Click">
-                    <cal:ActionMessage MethodName="IncrementCount">
-                        <cal:Parameter Value="1"/>
-                    </cal:ActionMessage>
-                </i:EventTrigger>
-            </i:Interaction.Triggers>
-        </RepeatButton>
+        <RepeatButton Content="Double" Margin="15" VerticalAlignment="Top"
+              cal:Message.Attach="[Event Click] = [IncrementCount(3)]" />
+    
+        <!-- in the below code, IncrementCount is called when the Button is clicked. However the method accepts a parameter.
+        Since we have not provided any parameter, Caliburn looks for any element with the parameter name of the method and 
+        then it finds the slider "Delta" and uses it's value as the parameter to the IncrementCount Method-->
+        <UniformGrid Columns="2" VerticalAlignment="Bottom">
+            <Slider Name="Delta" Minimum="0" Maximum="5" Margin="15" />
+            <Button Name="IncrementCount" Content="Increment" Margin="15" />
+        </UniformGrid>
     </Grid>
 </UserControl>
