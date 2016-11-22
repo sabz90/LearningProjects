@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="CaliburnMicroApp.AppView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+    <Grid Width="300" Height="300" Background="LightBlue">
+        <!--The name (Count) is automatically binded to the Count property of the AppViewModel. Notice we don't specify the AppViewModel anywhere.
+        This is the work done by the caliburn Micro Framework. How? It expects us to follow the naming convention properly. 
+        -->
+
+        <TextBlock Name="Count" Margin="20" FontSize="150" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <RepeatButton Name="IncrementCount" Content="Up" Margin="15" VerticalAlignment="Bottom" />
+
+    </Grid>
+</UserControl>
